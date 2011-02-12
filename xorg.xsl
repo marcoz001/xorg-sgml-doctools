@@ -74,5 +74,12 @@ DEALINGS IN THE SOFTWARE.
   <xsl:param name="body.font.family">DejaVu Serif</xsl:param>
   <xsl:param name="symbol.font.family">serif,Symbol,AR PL UMing CN,AR PL ShanHeiSun Uni,GNU Unifont</xsl:param>
 
+  <!-- open new PDF documents in new tab, don't replace doc in current tab -->
+  <xsl:attribute-set name="olink.properties">
+    <xsl:attribute name="show-destination">new</xsl:attribute>
+  </xsl:attribute-set>
+
+  <!-- keep id fragments in PDF file to allow linking to them -->
+  <xsl:param name="insert.olink.pdf.frag" select="0"></xsl:param>
 
 </xsl:stylesheet>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE targetset   SYSTEM
+"http://docbook.sourceforge.net/release/xsl/current/common/targetdatabase.dtd" [
+<!--
+   target database files are text files that contain references to every
+   tag within a file that contains an 'id' attribute.  This allows external
+   documents to link directly to those tags.  xsltproc will generate a target
+   database for each document.
+
+   The master database files is a list of all
+   target databases within a collection.  This allows the xslt processor
+   (xsltproc) to resolve references between documents in the collection.
+
+    Together this creates live/clickable links between documents.   The
+    author doesn't have to worry about managing the links.   The tool
+    will do it.
+-->
+]
+>
+<targetset>
+  <targetsetinfo>
+This is the X.org document collection. All documentation in X is (should be)
+listed here. This allows crosslinking between documents.
+'baseuri' below is the full path of the target link.
+  </targetsetinfo>
+
+  <sitemap>
+    <dir>
+      <document targetdoc="bigreq" baseuri="/tmp/crosslink_build/share/doc/bigreqsproto/bigreq.ps">
+<xi:include href="/tmp/crosslink_build/share/sgml/X11/dbs/bigreq.ps.db" xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:fallback><para><emphasis>MISSING XINCLUDE CONTENT</emphasis></para></xi:fallback>
+</xi:include>
+      </document>
+      <document targetdoc="libX11" baseuri="/tmp/crosslink_build/share/doc/libX11/specs/libX11/libX11.ps">
+<xi:include href="/tmp/crosslink_build/share/sgml/X11/dbs/libX11.ps.db" xmlns:xi="http://www.w3.org/2001/XInclude">
+<xi:fallback><para><emphasis>MISSING XINCLUDE CONTENT</emphasis></para></xi:fallback>
+</xi:include>
+      </document>
+    </dir>
+  </sitemap>
+</targetset>

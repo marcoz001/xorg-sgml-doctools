@@ -35,7 +35,11 @@ XORG_MACROS_VERSION(1.8)
 XORG_DEFAULT_OPTIONS
 
 AC_SUBST([sgmlrootdir],['${datarootdir}/sgml'])
+AC_SUBST([sgmlx11dir],['${sgmlrootdir}/X11'])
+AC_SUBST([sgmldbsdir],['${sgmlx11dir}/dbs'])
 
 AC_CONFIG_FILES([Makefile
+		masterdb/Makefile
+		targetdb/Makefile
 		xorg-sgml-doctools.pc])
 AC_OUTPUT
